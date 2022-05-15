@@ -1,0 +1,19 @@
+= Unsigned Atomics
+:source-highlighter: highlightjs
+
+.**Usage**
+[source, kotlin]
+----
+val atomicUByte = AtomicUByte()
+
+atomicUByte++
+atomicUByte--
+atomicUByte += 36
+atomicUByte -= 22L
+atomicUByte > 42u
+atomicUByte /= AtomicUShort(10u)
+atomicUByte *= AtomicULong(2)
+atomicUByte == AtomicUByte(0)
+
+val value = atomicUByte.value
+----
