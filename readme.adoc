@@ -1,7 +1,8 @@
 = Unsigned Atomics
 :source-highlighter: highlightjs
 
-
+image:https://img.shields.io/badge/docs-dokka-green[title="Dokka Docs", link="https://foxcapades.github.io/lib-unsigned-atomics/dokka/"]
+image:https://img.shields.io/badge/java-1.8-blue[title="Compatible with Java version 1.8"]
 
 .**Usage**
 [source, kotlin]
