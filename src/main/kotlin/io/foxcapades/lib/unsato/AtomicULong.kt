@@ -5,10 +5,8 @@ import java.util.concurrent.locks.ReentrantReadWriteLock
 import kotlin.concurrent.read
 import kotlin.concurrent.write
 
-class AtomicULong(initial: ULong = 0u) {
+data class AtomicULong(private var actual: ULong = 0u) {
   private val lock = ReentrantReadWriteLock()
-
-  private var actual = initial
 
   val value
     get() = lock.read { actual }
