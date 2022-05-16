@@ -5,6 +5,11 @@ image:https://img.shields.io/badge/docs-dokka-green[title="Dokka Docs", link="ht
 image:https://img.shields.io/badge/java-1.8-blue[title="Compatible with Java version 1.8"]
 image:https://img.shields.io/maven-central/v/io.foxcapades.lib/unsigned-atomics[Maven Central, link="https://search.maven.org/search?q=g:io.foxcapades.lib%20AND%20a:unsigned-atomics"]
 
+Provides atomic wrappers for Kotlin's unsigned types.
+
+Each type includes operator functions for arithmetic operations and comparisons
+with all integral types as well as all `unsigned-atomics` types.
+
 .**Usage**
 [source, kotlin]
 ----
