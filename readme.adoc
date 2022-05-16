@@ -3,6 +3,7 @@
 
 image:https://img.shields.io/badge/docs-dokka-green[title="Dokka Docs", link="https://foxcapades.github.io/lib-unsigned-atomics/dokka/"]
 image:https://img.shields.io/badge/java-1.8-blue[title="Compatible with Java version 1.8"]
+image:https://img.shields.io/maven-central/v/io.foxcapades.lib/unsigned-atomics[Maven Central, link="https://search.maven.org/search?q=g:io.foxcapades.lib%20AND%20a:unsigned-atomics"]
 
 .**Usage**
 [source, kotlin]

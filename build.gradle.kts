@@ -3,6 +3,7 @@ plugins {
   id("org.jetbrains.dokka") version "1.6.10"
   `java-library`
   `maven-publish`
+  signing
 }
 
 group = "io.foxcapades.lib"
@@ -53,6 +54,15 @@ publishing {
         password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
       }
     }
+
+    maven {
+      name = "Sonatype"
+      url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+      credentials {
+        username = project.findProperty("nexus.user") as String
+        password = project.findProperty("nexus.pass") as String
+      }
+    }
   }
 
   publications {
@@ -62,6 +72,13 @@ publishing {
         name.set("Atomic Unsigned Types")
         description.set("Provides atomic wrappers for Kotlin's unsigned types.")
         url.set("https://github.com/foxcapades/lib-unsigned-atomics")
+
+        licenses {
+          license {
+            name.set("MIT")
+          }
+        }
+
         developers {
           developer {
             id.set("epharper")
@@ -71,6 +88,7 @@ publishing {
             organization.set("VEuPathDB")
           }
         }
+
         scm {
           connection.set("scm:git:git://github.com/foxcapades/lib-unsigned-atomics.git")
           developerConnection.set("scm:git:ssh://github.com/foxcapades/lib-unsigned-atomics.git")
@@ -79,4 +97,11 @@ publishing {
       }
     }
   }
+}
+
+signing {
+  useGpgCmd()
+
+  sign(configurations.archives.get())
+  sign(publishing.publications["gpr"])
 }
