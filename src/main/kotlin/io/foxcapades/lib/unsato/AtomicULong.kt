@@ -5,6 +5,12 @@ import java.util.concurrent.locks.ReentrantReadWriteLock
 import kotlin.concurrent.read
 import kotlin.concurrent.write
 
+/**
+ * An unsigned long value that may be updated atomically.
+ *
+ * @since 1.0.0
+ * @author Elizabeth Paige Harper [https://github.com/foxcapades]
+ */
 data class AtomicULong(private var actual: ULong = 0u) {
   private val lock = ReentrantReadWriteLock()
 

@@ -5,6 +5,12 @@ import java.util.concurrent.locks.ReentrantReadWriteLock
 import kotlin.concurrent.read
 import kotlin.concurrent.write
 
+/**
+ * An unsigned int value that may be updated atomically.
+ *
+ * @since 1.0.0
+ * @author Elizabeth Paige Harper [https://github.com/foxcapades]
+ */
 data class AtomicUInt(private var actual: UByte = 0u) {
   private val lock = ReentrantReadWriteLock()
 
